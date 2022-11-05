@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Youtuber's Data</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Video Details</div>
+
+   <table cellspacing="0" style="width:100%">
+
+      <tr>
+         <th>Youtuber Name</th>
+         <th>Title</th>
+         <th>View Count</th>
+         <th>Duration</th>
+          <th>Video Link</th>
+          <th>Thumbnail Link</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+          <td>{{review['Youtuber_Name']}}</td>
+          <td>{{review['Title']}}</td>
+          <td>{{review['View_Count']}}</td>
+          <td>{{review['Duration']}}</td>
+          <td><a href={{review['Video_Link']}}>Video_Link</a> </td>
+          <td><a href={{review['Thumbnail_Link']}}>Thumbnail_Link</a> </td>
+       {% endfor %}
+
+   </table>
+</div>
+
+
+</body>
+
+</html>
